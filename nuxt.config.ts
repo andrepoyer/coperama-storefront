@@ -1,12 +1,11 @@
 export default defineNuxtConfig({
+  compatibilityDate: '2025-11-17',
+  
   modules: [
     '@nuxtjs/tailwindcss',
-    '@pinia/nuxt'
   ],
-  runtimeConfig: {
-    public: {
-      sapCommerceBaseUrl: process.env.SAP_COMMERCE_BASE_URL || ''
-    }
-  },
-  css: ['~/assets/css/tailwind.css'],
-})
+
+  css: [
+    '~/assets/css/base.css',
+  ],
+});
