@@ -1,0 +1,14 @@
+{
+  "welcome": "Bienvenido",
+  "hello": "Hola {name}",
+  "description": "Esta es una prueba de i18n",
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "contact": "Contacto"
+  },
+  "button": {
+    "submit": "Enviar",
+    "cancel": "Cancelar"
+  }
+}
