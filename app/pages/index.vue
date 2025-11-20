@@ -6,7 +6,6 @@
         <p class="text-gray-600">Sistema de design - Cores do projeto</p>
       </div>
 
-
       <!-- Primary -->
       <section class="bg-white rounded-lg shadow-sm p-6">
         <h2 class="text-2xl font-semibold text-gray-900 mb-4">Primary</h2>
@@ -277,6 +276,30 @@
         <p class="text-button-md">text-button-md</p>
         <p class="text-button-sm">text-button-sm</p>
       </section>
+
+      <!-- Counter -->
+      <section class="bg-white rounded-lg shadow-sm p-6 space-y-2">
+        <p class="text-h2">Validação Pinia</p>
+
+        <p>Contador: {{ counterStore.count }}</p>
+        <p>Dobro: {{ counterStore.doubleCount }}</p>
+
+        <button class="bg-neutral-light px-4 py-1 rounded-md" @click="counterStore.decrement">
+          -1
+        </button>
+        <button class="bg-primary-default px-4 py-1 ml-2 rounded-md" @click="handleIncrement">
+          +1
+        </button>
+      </section>
     </div>
   </div>
 </template>
+<script setup>
+import { useCounterStore } from '~/stores/counter'
+
+const counterStore = useCounterStore()
+
+function handleIncrement() {
+  counterStore.increment()
+}
+</script>

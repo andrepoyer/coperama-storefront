@@ -9,25 +9,20 @@ export default defineNuxtConfig({
     '@nuxtjs/eslint-module',
     '@pinia/nuxt',
     '@nuxt/eslint',
-    [
-      '@nuxtjs/i18n',
+    '@nuxt/image',
+    '@nuxtjs/i18n',
+    '@nuxt/fonts'
+  ],
+  fonts: {
+    families: [
       {
-        locales: [
-          { code: 'es', language: 'es-ES', file: 'es.json', name: 'Español' },
-          { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Français' }
-        ],
-        lazy: true,
-        langDir: 'locales',
-        defaultLocale: 'es',
-        strategy: 'prefix_except_default',
-        detectBrowserLanguage: {
-          useCookie: true,
-          cookieKey: 'i18n_redirected',
-          redirectOn: 'root'
-        }
+        name: 'Montserrat',
+        provider: 'google',
+        weights: [400, 700],
+        display: 'swap'
       }
     ]
-  ],
+  },
   css: ['~/assets/css/base.css'],
   nitro: {
     compressPublicAssets: true,
@@ -40,23 +35,7 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: {
         lang: 'es-ES'
-      },
-      link: [
-        {
-          rel: 'preload',
-          href: '/fonts/Montserrat/static/Montserrat-Regular.ttf',
-          as: 'font',
-          type: 'font/ttf',
-          crossorigin: 'anonymous'
-        },
-        {
-          rel: 'preload',
-          href: '/fonts/Montserrat/static/Montserrat-Bold.ttf',
-          as: 'font',
-          type: 'font/ttf',
-          crossorigin: 'anonymous'
-        }
-      ]
+      }
     }
   },
   postcss: {
