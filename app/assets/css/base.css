@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-h1 {
+    font-size: 3rem; /* 48px */
+    font-weight: 700;
+  }
+
+  .text-h2 {
+    font-size: 2rem; /* 32px */
+    font-weight: 500;
+  }
+
+  .text-h3 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 700;
+  }
+
+  .text-paragraph {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 400;
+  }
+
+  .text-button-md {
+    font-size: 1rem; /* 16px */
+    font-weight: 700;
+  }
+
+  .text-button-sm {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 700;
+  }
+}

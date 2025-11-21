@@ -1,0 +1,14 @@
+{
+  "welcome": "Bienvenue",
+  "hello": "Bonjour {name}",
+  "description": "Ceci est un test d'internationalisation",
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "button": {
+    "submit": "Envoyer",
+    "cancel": "Annuler"
+  }
+}
