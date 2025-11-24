@@ -11,18 +11,9 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxtjs/i18n',
-    '@nuxt/fonts'
+    'nuxt-svgo',
+    'reka-ui/nuxt'
   ],
-  fonts: {
-    families: [
-      {
-        name: 'Montserrat',
-        provider: 'google',
-        weights: [400, 700],
-        display: 'swap'
-      }
-    ]
-  },
   css: ['~/assets/css/base.css'],
   nitro: {
     compressPublicAssets: true,
@@ -35,7 +26,22 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: {
         lang: 'es-ES'
-      }
+      },
+      link: [
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com'
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: ''
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=block'
+        }
+      ]
     }
   },
   postcss: {
@@ -60,6 +66,29 @@ export default defineNuxtConfig({
             }
           }
         : {})
+    }
+  },
+  svgo: {
+    autoImportPath: './assets/icons',
+    componentPrefix: 'i',
+    defaultImport: 'component',
+    svgoConfig: {
+      plugins: [
+        {
+          name: 'preset-default',
+          params: {
+            overrides: {
+              removeViewBox: false
+            }
+          }
+        },
+        {
+          name: 'convertColors',
+          params: {
+            currentColor: true
+          }
+        }
+      ]
     }
   }
 })
