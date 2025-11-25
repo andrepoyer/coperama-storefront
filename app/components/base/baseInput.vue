@@ -15,7 +15,7 @@
         :maxlength="maxlength"
         :placeholder="placeholder"
         :autocomplete="autocomplete"
-        class="h-full w-full bg-transparent py-2 text-base text-gray-700 placeholder-gray-400 outline-none transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-50"
+        class="cop-base-input"
         @input="handleInput"
         @focus="handleFocus"
         @blur="handleBlur"
@@ -81,8 +81,8 @@ const variantStyles = {
     icon: 'text-brand-accent'
   },
   secondary: {
-    border: 'border-brand-secondary',
-    icon: 'text-brand-secondary'
+    border: 'border-brand-primary',
+    icon: 'text-brand-primary'
   }
 }
 
@@ -119,9 +119,8 @@ const handleBlur = (event: FocusEvent) => {
  */
 const wrapperClasses = computed(() => {
   const base = [
-    'flex items-center justify-between border-b-2 transition-colors duration-200',
-    'bg-transparent',
-    'pb-1'
+    'flex items-center justify-between border-b-2 transition-colors duration-200 relative',
+    'bg-transparent'
   ]
 
   if (props.disabled) {
@@ -140,7 +139,7 @@ const wrapperClasses = computed(() => {
  * @returns {string} - The computed icon classes.
  */
 const iconClasses = computed(() => {
-  const base = ['!size-[28px] transition-colors duration-200 ml-2']
+  const base = ['!size-[36px] transition-colors duration-200 ml-2 absolute right-0 top-[17px]']
 
   if (props.disabled) {
     return [...base, 'text-gray-300'].join(' ')
