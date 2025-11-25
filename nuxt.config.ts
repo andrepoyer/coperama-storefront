@@ -12,8 +12,14 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/i18n',
     'nuxt-svgo',
-    'reka-ui/nuxt'
+    'reka-ui/nuxt',
+    'nuxt-auth-utils'
   ],
+  runtimeConfig: {
+    sapApiBaseUrl: '',
+    sapClientId: '',
+    sapClientSecret: ''
+  },
   css: ['~/assets/css/base.css'],
   nitro: {
     compressPublicAssets: true,
