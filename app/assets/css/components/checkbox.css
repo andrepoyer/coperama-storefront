@@ -1,0 +1,15 @@
+.cop-base-checkbox {
+  @apply w-5 h-5 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 flex-shrink-0;
+}
+
+.cop-base-checkbox:hover {
+  @apply border-teal-600;
+}
+
+.cop-base-checkbox[data-state='checked'] {
+  @apply bg-teal-600 border-teal-600;
+}
+
+.cop-base-checkbox-indicator {
+  @apply flex items-center justify-center;
+}
