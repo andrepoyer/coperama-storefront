@@ -7,21 +7,24 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/eslint-module',
+    '@nuxtjs/strapi',
     '@pinia/nuxt',
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxtjs/i18n',
-    '@nuxt/fonts'
+    'nuxt-svgo',
+    'nuxt-auth-utils'
   ],
-  fonts: {
-    families: [
-      {
-        name: 'Montserrat',
-        provider: 'google',
-        weights: [400, 700],
-        display: 'swap'
-      }
-    ]
+  typescript: {
+    shim: false
+  },
+  runtimeConfig: {
+    sapApiBaseUrl: '',
+    sapClientId: '',
+    sapClientSecret: '',
+    strapi: {
+      url: process.env.STRAPI_URL || 'http://localhost:1337'
+    }
   },
   css: ['~/assets/css/base.css'],
   nitro: {
@@ -35,7 +38,23 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: {
         lang: 'es-ES'
-      }
+      },
+      link: [
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com'
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: ''
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=block'
+        },
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+      ]
     }
   },
   postcss: {
@@ -60,6 +79,29 @@ export default defineNuxtConfig({
             }
           }
         : {})
+    }
+  },
+  svgo: {
+    autoImportPath: './assets/icons',
+    componentPrefix: 'i',
+    defaultImport: 'component',
+    svgoConfig: {
+      plugins: [
+        {
+          name: 'preset-default',
+          params: {
+            overrides: {
+              removeViewBox: false
+            }
+          }
+        },
+        {
+          name: 'convertColors',
+          params: {
+            currentColor: true
+          }
+        }
+      ]
     }
   }
 })
