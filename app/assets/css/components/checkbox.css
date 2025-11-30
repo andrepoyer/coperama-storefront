@@ -1,0 +1,9 @@
+.checkbox:checked::before {
+  content: '';
+  display: none;
+}
+
+.checkbox:checked::after {
+  content: '';
+  display: none;
+}

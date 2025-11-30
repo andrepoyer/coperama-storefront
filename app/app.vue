@@ -10,4 +10,12 @@ useSeoMeta({
   ogTitle: 'Coperama - We buy together',
   ogDescription: 'We buy together'
 })
+
+const currentTheme = 'light'
+useHead({
+  htmlAttrs: {
+    'data-theme': currentTheme,
+    class: ''
+  }
+})
 </script>

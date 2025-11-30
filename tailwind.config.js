@@ -5,17 +5,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          default: '#18988B'
-        },
-        secondary: '#FF6B00',
-        neutral: {
-          light: '#999999',
-          dark: '#1A1A1A'
-        },
         brand: {
-          accent: '#8F003E'
+          primary: {
+            DEFAULT: '#18988B',
+            dark: '#1A6D65'
+          },
+          secondary: {
+            DEFAULT: '#1F3B4D',
+            dark: '#162A36'
+          },
+          accent: {
+            DEFAULT: '#8F003E',
+            dark: '#650013'
+          },
+          neutral: {
+            extraLight: '#E5E5E5',
+            light: '#999999',
+            dark: '#000000'
+          }
         },
+
         business: {
           ecoperama: '#8DC63F',
           lifestyle: '#4E7FB8',
@@ -23,19 +32,23 @@ export default {
           hotels: '#A45DA4',
           international: '#A39161'
         },
-        state: {
-          default: '#8F003E',
-          hover: '#650013'
-        },
         ui: {
           bg: '#FFFFFF',
           surface: '#F8F8F8',
           border: '#E5E5E5',
-          foreground: '#1A1A1A',
-          muted: '#666666',
-          success: '#4CAF50',
-          warning: '#FFC107',
-          error: '#D32F2F'
+
+          text: {
+            primary: '#1A1A1A',
+            secondary: '#666666',
+            inverted: '#FFFFFF'
+          },
+
+          feedback: {
+            success: '#4CAF50',
+            warning: '#FFC107',
+            error: '#D32F2F',
+            info: '#4E7FB8'
+          }
         }
       },
 
@@ -68,5 +81,8 @@ export default {
     }
   },
 
-  plugins: []
+  plugins: [require('tailwindcss-animate'), require('daisyui')],
+  daisyui: {
+    themes: ['light', 'dark']
+  }
 }
