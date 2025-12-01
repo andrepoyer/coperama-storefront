@@ -1,36 +1,28 @@
 <template>
-  <section class="py-6 px-6 md:px-12 bg-gray-100">
-    <div class="bg-white p-6 rounded-xl shadow-sm">
-      <h3 class="text-xl font-semibold mb-2">{{ title }}</h3>
-      <p class="text-sm text-gray-600 mb-4">{{ subtitle }}</p>
-
-      <StaggerList :stagger="0.14">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <Motion.div
-            v-for="logo in logos"
-            :key="logo.id"
-            :initial="{ scale: 0.9, opacity: 0 }"
-            :animate="{ scale: 1, opacity: 1 }"
-            :transition="{ duration: 0.4 }"
-            class="bg-white p-3 flex items-center justify-center rounded-md"
-          >
-            <NuxtImg :src="logo.logo?.url || '/placeholder-logo.png'" alt="logo" class="object-contain h-16" />
-          </Motion.div>
-        </div>
-      </StaggerList>
+  <section class="bg-brand-secondary text-white py-8 flex justify-center">
+    <div class="container mb-8">
+      <div class="mb-5 px-4 text-center text-2xl font-bold md:my-14">
+        <h2 class="text-2xl md:text-5xl font-bold">Más de 1.500 hoteles ya confían en nosotros</h2>
+        <p class="text-base font-medium text-brand-neutral-light pt-2.5">Estos son algunos de ellos</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:px-0 px-0 mx-0">
+        <NuxtImg
+            src="/images/png/logo-negativa.png"
+            class="w-full md:h-[600px] h-auto shadow-xl object-cover"
+          />
+      </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import StaggerList from '@/components/ui/staggerList.vue'
-import { Motion } from '@motionone/vue'
-import { NuxtImg } from '#components'
-import type { IHotelLogo } from '@/types/home';
+import featureCard from '../public/featureCard.vue'
+import MotionFade from '@/components/ui/motionFade.vue'
+import type { IFeature } from '@/types/home'
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps<{
-  logos: IHotelLogo[]
-  title?: string
-  subtitle?: string
+  items: IFeature[]
 }>()
+
 </script>

@@ -1,24 +1,23 @@
 <template>
-  <header class="w-full bg-white shadow-sm">
-    <div class="container mx-auto px-4 py-3 grid-cols-1 block text-center md:items-center md:justify-between md:grid-cols-3 md:flex">
-      <NuxtLink to="/" class="flex gap-3 justify-center md:align-middle">
-        <NuxtImg src="/images/svg/logo.svg" alt="Coperama" width="140" height="40"/>
-      </NuxtLink>
+  <header class="w-full bg-white top-0 z-50 md:mb-0 mb-1"> <!--FOR-LATER: class to stick de menu at the top - 'sticky'-->
+    <div class="mx-auto px-4 py-3 md:flex-row items-center justify-between flex-col flex ">
+      <div class="flex items-center md:pl-6 py-2 md:w-2/3">
+        <NuxtImg
+          src="/images/svg/logo.svg"
+          class="object-cover min-h-[80px]"
+        />
+      </div>
+      <div class="flex-col flex items-center justify-end md:w-1/3 mt-0.5 md:mt-0 md:pr-6 md:flex-row-reverse">
+        <button class="bg-brand-accent text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 shadow-lg hover:scale-105 transition mb-2.5 md:mb-0">
+          <i-user class="h-5 w-5"/>
+          Acceso Clientes
+        </button>
 
-      <div class="block md:flex items-center gap-2 order">
-        <button class="p-2 rounded-md hover:bg-gray-100">¿ERES UN PROVEEDOR?</button>
-        <div class="p-4 flex flex-col gap-4">
-          <div>
-            <BaseButton variant="primary" @click="showLoginDialog = true"> ACCESO CLIENTES </BaseButton>
-          </div>
-          <DialogLogin v-model:open="showLoginDialog" />
-        </div>
+        <a href="#" class="md:text-brand-secondary-dark text-base font-bold hover:text-brand-primary-dark md:pr-12">¿ERES UN PROVEEDOR?</a>
       </div>
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
-  import { NuxtImg } from '#components'
-  const showLoginDialog = ref(false)
 </script>

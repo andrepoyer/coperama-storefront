@@ -3,6 +3,7 @@
     <NuxtPage />
   </NuxtLayout>
 </template>
+
 <script setup>
 useSeoMeta({
   title: 'Coperama - We buy together',
