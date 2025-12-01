@@ -1,7 +1,7 @@
 <template>
-  <section class="bg-brand-secondary text-white py-8 flex justify-center">
+  <section class="bg-brand-secondary text-white py-8 md:px-14 flex justify-center">
     <div class="container mb-8">
-      <div class="mb-5 px-4 text-center text-2xl font-bold md:my-14">
+      <div class="mb-5 px-4 md:px-0 text-center text-2xl font-bold md:my-14">
         <h2 class="text-2xl md:text-5xl font-bold">Con Coperama, comprar y ahorrar es más fácil</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 md:px-0">

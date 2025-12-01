@@ -33,7 +33,7 @@ const slidesData = [
 </script>
 
 <template>
-  <div class="bg-white w-max relative mx-auto h-auto shadow-sm container-size">
+  <div class="bg-white w-max relative mx-auto h-auto shadow-sm container-size mb-8">
     <swiper
       :modules="modules"
       :slides-per-view="1"
@@ -49,10 +49,10 @@ const slidesData = [
             <span class="text-brand-primary font-medium text-base md:text-3xl sm:text-lg md:mb-14 mb-3 md:self-start">
               {{ slide.preTitle }}
             </span>
-            <h2 class="text-brand-secondary font-bold md:text-5xl text-2xl leading-tight md:mb-5">
+            <h2 class="text-brand-secondary font-bold md:text-5xl text-2xl leading-tight mb-4 md:mb-5">
               {{ slide.mainTitle }}
             </h2>
-            <p class="text-gray-500 md:text-3xl text-base max-w-xl mx-auto leading-relaxed md:mb-14">
+            <p class="text-brand-neutral-light md:text-3xl font-medium text-base max-w-xl mx-auto leading-relaxed md:mb-14 md:ml-0">
               {{ slide.description }}
             </p>
           </div>
@@ -63,28 +63,31 @@ const slidesData = [
 </template>
 
 <style scoped>
+
 .container-size {
   width: 100vw;
-}
-
-
-.my-swiper-container {
-  @apply pt-16;
 }
 
 :deep(.swiper-pagination) {
     top: 0 !important;
     margin-top: 32px !important;
-    @apply flex items-start mt-4 text-center justify-center;
+    @apply flex items-start mt-8 text-center justify-center;
+}
+
+@media(max-width: 768px) {
+  .my-swiper-container {
+    @apply pt-16;
+  }
 }
 
 @media(min-width: 768px) {
   .container-size {
     width: 40vw;
   }
-  :deep(.swiper-pagination-bullet) {
-    bottom: 0 !important;
-    padding-left: 20px;
+  :deep(.swiper-pagination) {
+    top:unset !important;
+    bottom: 0.1 !important;
+    padding-left: 24px;
     @apply flex justify-start items-end mt-4;
   }
 }

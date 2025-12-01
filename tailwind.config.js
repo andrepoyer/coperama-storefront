@@ -32,6 +32,7 @@ export default {
           hotels: '#A45DA4',
           international: '#A39161'
         },
+
         ui: {
           bg: '#FFFFFF',
           surface: '#F8F8F8',
